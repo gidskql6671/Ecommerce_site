@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res){
-		res.render('index',{
-			title: "Ecommerce Site"
-		});
-	});
+	res.send('Test');
+});
 
 module.exports = router;
