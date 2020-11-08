@@ -4,12 +4,11 @@
   "description": "e-commerce for study",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+	  "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gidskql6671:5124602me@@github.com/gidskql6671/Ecommerce_site.git"
+    "url": "git+https://gidskql6671/Ecommerce_site.git"
   },
   "author": "gidskql6671",
   "license": "ISC",
@@ -18,10 +17,21 @@
   },
   "homepage": "https://github.com/gidskql6671/Ecommerce_site#readme",
   "dependencies": {
+	"@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.13",
     "path": "^0.12.7",
     "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   }
 }

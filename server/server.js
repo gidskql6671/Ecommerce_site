@@ -1,7 +1,8 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const  dotenv = require('dotenv');
+
+const app = express();
 
 dotenv.config();
 
@@ -28,8 +29,8 @@ db.on('open', function(){
 })
 
 // 라우터 연결
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const indexRouter  = require( './routes/index');
+const usersRouter  = require( './routes/users');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
