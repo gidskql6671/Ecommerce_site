@@ -1,17 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	
+	constructor(props){
+		super(props);
+		this.state = {
+			username:null
+		};
+	}
+	
+	componentDidMount(){
+		fetch("https://e-commerce-site-api.run.goorm.io/api")
+			.then(res=>res.json())
+			.then(data=>this.setState({username:data.username}));
+	}
+	
+	render(){
+		  const {username} = this.state;
+		  return (
+			<div className="App">
+				  <header className="App-header">
+						{username ? `Hello ${username}` : 'Hello World'}
+				  </header>
+			</div>
+			  );
+			}
 }
 
 export default App;
