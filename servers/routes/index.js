@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res){
-		res.render('index',{
-			title: "Ecommerce Site"
-		});
+    console.log(`http://localhost:${port}/api/`);
+		res.send( {title: "Ecommerce Site"} );
 	});
 
 module.exports = router;

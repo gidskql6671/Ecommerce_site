@@ -6,7 +6,7 @@ const app = express();
 
 dotenv.config();
 
-let port = process.env.PORT || 3000;
+let port = process.env.SERVER_PORT || 3000;
 let url = process.env.MONGO_URL;
 
 // Template Engine 설정
@@ -29,11 +29,9 @@ db.on('open', function(){
 })
 
 // 라우터 연결
-const indexRouter  = require( './routes/index');
-const usersRouter  = require( './routes/users');
+const api  = require( './routes/index');
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', api);
 
 // 서버 실행
 let server = app.listen(port, function(){
