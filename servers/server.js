@@ -18,21 +18,19 @@ app.set('view engine', 'pug');
 
 // body-parser 설정
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 // DB 연결 
-// require('./models/userSchema');
+require('./models/userModel');
 
-// mongoose.connect(url,
-// 				{useNewUrlParser : true,
-// 				useUnifiedTopology: true});
-// let db = mongoose.connection;
+// Node.js의 native Promise 사용
+mongoose.Promise = global.Promise;
 
-// db.on('error', function(err){
-// 	console.log(`DB Error : ${err}`);
-// })
-// db.on('open', function(){
-// 	console.log('DB Open');
-// })
+mongoose.connect(url,
+				{useNewUrlParser : true,
+				useUnifiedTopology: true})
+	.then(() => console.log('DB Open'))
+	.catch(e => console.error(e));
 
 // 라우터 연결
 const api  = require( './routes/index');
